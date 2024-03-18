@@ -1,14 +1,14 @@
+// fileExists fonksiyonunu pipeline bloğu dışına çıkaralım
+def fileExists(String path) {
+    new File(path).exists()
+}
+
 pipeline {
     agent any
 
     environment {
         // JDK'yı PATH ortam değişkenine eklemek için
         PATH = "${tool 'Java'}/bin;" + "${env.PATH}"
-    }
-
-    // fileExists fonksiyonunu pipeline bloğu dışında tanımlayalım
-    def fileExists(String path) {
-        new File(path).exists()
     }
 
     stages {
