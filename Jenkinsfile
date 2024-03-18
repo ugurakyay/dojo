@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     // Doğru komutu kullanarak Java'yı çağırın
-                    bat "\"${tool 'Java'}\" -jar C:\\Program Files\\Java\\openjdk-21.0.2\\bin\\java.exe"
+                    bat "C:\\Program Files\\Java\\openjdk-21.0.2\\bin\\java.exe"
                 }
             }
         }
