@@ -13,11 +13,18 @@ pipeline {
             }
         }
 
+        stage('Checkout TestNG Code') {
+            steps {
+                // TestNG.xml dosyasını çekmek için yeni bir checkout komutu ekleyin
+                git branch: 'master', url: 'https://github.com/ugurakyay/dojo.git'
+            }
+        }
+
         stage('Build') {
             steps {
                 script {
                     // Doğru komutu kullanarak Java'yı başlatın
-                    bat "\"${tool 'Java'}\\bin\\java.exe\" -version"
+                    bat "\"${tool 'Java'}\\bin\\java.exe\" -cp path\\to\\your\\testng.jar org.testng.TestNG TestNG.xml"
                 }
             }
         }
