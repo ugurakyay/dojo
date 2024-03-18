@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
                     // Diğer build adımları buraya eklenebilir
-                    bat '"C:\\Program Files\\Java\\openjdk-21.0.2"'
+                    bat '"C:\\Program Files\\Java\\openjdk-21.0.2\\bin\\java"'
                 }
             }
         }
