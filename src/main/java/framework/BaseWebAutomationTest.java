@@ -1,14 +1,14 @@
 package framework;
 
 import framework.utils.WebDriverUtils;
-import org.junit.After;
+import org.testng.annotations.AfterMethod;
 
 
 public abstract class BaseWebAutomationTest {
 
 
 
-    @After
+    @AfterMethod
 
    public void tearDown() {
 

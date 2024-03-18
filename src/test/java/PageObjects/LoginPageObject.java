@@ -22,4 +22,11 @@ public class LoginPageObject extends PageObject {
         Thread.sleep(2000);
 
     }
+    @Override
+    public void LogOut() throws InterruptedException {
+        browser.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div/div/header/div/div/div[3]")).click();
+        browser.findElement(By.xpath("//*[@id=\"headlessui-menu-item-:re:\"]")).click();
+        Thread.sleep(10000);
+    }
+
 }
