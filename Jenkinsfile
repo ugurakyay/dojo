@@ -26,9 +26,16 @@ pipeline {
     // JDK'nın otomatik olarak yüklenmesini sağlayacak olan tool tanımı
     tools {
         // JDK'yı otomatik olarak yüklerken kullanılacak olan 'Java' aracı
-        jdk 'Java'
+        jdk {
+            // JDK'nın yükleneceği ve kullanılacağı konumu belirtin
+            name = 'Java'
+            // JDK'nın indirileceği URL'yi belirtin (opsiyonel)
+            // Örneğin: 'https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_windows-x64_bin.zip'
+            //url = 'https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_windows-x64_bin.zip'
+        }
     }
 }
+
 
 
 
