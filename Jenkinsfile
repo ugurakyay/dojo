@@ -1,8 +1,3 @@
-// fileExists fonksiyonunu pipeline bloğu dışına çıkaralım
-def fileExists(String path) {
-    new File(path).exists()
-}
-
 pipeline {
     agent any
 
@@ -29,7 +24,7 @@ pipeline {
             steps {
                 script {
                     // TestNG'nin bulunduğu dizin ve dosya adını belirtin
-                    def testngJarPath = 'C:\\Users\\Ugur Akyay\\Downloads\\Java\\testNG.jar'
+                    def testngJarPath = "${WORKSPACE}/testng.jar"
                     // Jar dosyasının varlığını kontrol edin
                     if (fileExists(testngJarPath)) {
                         echo 'TestNG jar file found.'
@@ -44,7 +39,7 @@ pipeline {
             steps {
                 script {
                     // Doğru komutu kullanarak Java'yı başlatın
-                    bat "\"${tool 'Java'}\\bin\\java.exe\" -cp \"C:\\Program Files\\Java\\openjdk-21.0.2\\lib\\*\";\"${env.WORKSPACE}\\path\\to\\your\\testng.jar\" org.testng.TestNG TestNG.xml"
+                    bat "\"${tool 'Java'}\\bin\\java.exe\" -cp ${WORKSPACE}\\testng.jar org.testng.TestNG TestNG.xml"
                 }
             }
         }
