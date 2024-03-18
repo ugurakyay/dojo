@@ -6,6 +6,11 @@ pipeline {
         PATH = "${tool 'Java'}/bin;" + "${env.PATH}"
     }
 
+    // fileExists fonksiyonunu pipeline bloğu dışında tanımlayalım
+    def fileExists(String path) {
+        new File(path).exists()
+    }
+
     stages {
         stage('Checkout SCM') {
             steps {
@@ -49,10 +54,5 @@ pipeline {
     tools {
         // JDK'yı otomatik olarak yüklerken kullanılacak olan 'Java' aracı
         jdk 'Java'
-    }
-
-    // fileExists fonksiyonunu pipeline içinde tanımlayalım
-    def fileExists(String path) {
-        new File(path).exists()
     }
 }
