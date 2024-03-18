@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        // PATH değişkeni
+        // Çift tırnak içinde PATH değişkeni
         PATH = "${tool 'Java'}/bin;" + "${env.PATH}"
     }
 
@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
                     // Diğer build adımları buraya eklenebilir
-                    bat 'mvn clean install' // Windows'ta çalışacak komut
+                    bat '"C:\\Users\\Ugur Akyay\\Downloads\\Java\\hudson4797231470895317114.bat"'
                 }
             }
         }
@@ -25,13 +25,7 @@ pipeline {
 
     // JDK'nın otomatik olarak yüklenmesini sağlayacak olan tool tanımı
     tools {
-        // 'Java' aracı JDK'yı otomatik olarak yükler
+        // JDK'yı otomatik olarak yüklerken kullanılacak olan 'Java' aracı
         jdk 'Java'
     }
 }
-
-
-
-
-
-
