@@ -44,7 +44,7 @@ pipeline {
             steps {
                 script {
                     // Doğru komutu kullanarak Java'yı başlatın
-                    bat "\"${tool 'Java'}\\bin\\java.exe\" -cp path\\to\\your\\testng.jar org.testng.TestNG TestNG.xml"
+                    bat "\"${tool 'Java'}\\bin\\java.exe\" -cp ${tool 'Java'}/lib/*;${env.WORKSPACE}/path/to/your/testng.jar org.testng.TestNG TestNG.xml"
                 }
             }
         }
