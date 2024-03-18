@@ -22,9 +22,14 @@ pipeline {
 
         stage('Install TestNG') {
             steps {
-                // Maven kullanarak TestNG'yi projeye ekleme
-                // Bu adımı, Jenkins sunucusunda Maven'in yüklü olduğu bir ortamda çalıştırmanız gerekir
-                bat 'mvn dependency:resolve'
+                // TestNG'nin bulunduğu dizin ve dosya adını belirtin
+                def testngJarPath = 'C:\\Users\\Ugur Akyay\\Downloads\\testng-7.8.0 (1)\\testNG.jar'
+                // Jar dosyasının varlığını kontrol edin
+                if (fileExists(testngJarPath)) {
+                    echo 'TestNG jar file found.'
+                } else {
+                    error 'TestNG jar file not found.'
+                }
             }
         }
 
@@ -43,4 +48,8 @@ pipeline {
         // JDK'yı otomatik olarak yüklerken kullanılacak olan 'Java' aracı
         jdk 'Java'
     }
+}
+
+def fileExists(String path) {
+    new File(path).exists()
 }
