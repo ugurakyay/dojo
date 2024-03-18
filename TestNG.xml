@@ -1,0 +1,13 @@
+<!--DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" -->
+<suite name="MyTestSuite">
+    <test name="MyTest">
+        <classes>
+            <class name="Tests.LoginPageTest"/>
+        </classes>
+    </test>
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    </listeners>
+</suite>
+
