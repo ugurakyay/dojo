@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
                     // Diğer build adımları buraya eklenebilir
-                    bat 'mvn clean install'
+                    bat 'mvn clean install' // Windows'ta çalışacak bir komut
                 }
             }
         }
