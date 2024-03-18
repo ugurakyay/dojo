@@ -2,7 +2,8 @@ pipeline {
     agent any
 
     environment {
-        PATH = "${tool 'Java'}/bin;" + env.PATH
+        // Çift tırnak içinde PATH değişkeni
+        PATH = "${tool 'Java'}/bin;" + "${env.PATH}"
     }
 
     stages {
@@ -28,5 +29,6 @@ pipeline {
         jdk 'Java'
     }
 }
+
 
 
