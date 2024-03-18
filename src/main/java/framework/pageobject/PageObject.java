@@ -24,6 +24,5 @@ public abstract class PageObject {
     public abstract boolean isPresent();
 
 
-
-
+    public abstract void logOut() throws InterruptedException;
 }

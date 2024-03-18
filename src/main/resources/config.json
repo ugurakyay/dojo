@@ -2,6 +2,6 @@
   "platform": "firefox",
   "host": "https://dojo-preprod.iointel.com/auth/login",
   "userName": "test",
-  "password": "654321",
+  "password": "test"
 
 }
