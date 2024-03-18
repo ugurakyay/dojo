@@ -22,13 +22,15 @@ pipeline {
 
         stage('Install TestNG') {
             steps {
-                // TestNG'nin bulunduğu dizin ve dosya adını belirtin
-                def testngJarPath = 'C:\\Users\\Ugur Akyay\\Downloads\\testng-7.8.0 (1)\\testNG.jar'
-                // Jar dosyasının varlığını kontrol edin
-                if (fileExists(testngJarPath)) {
-                    echo 'TestNG jar file found.'
-                } else {
-                    error 'TestNG jar file not found.'
+                script {
+                    // TestNG'nin bulunduğu dizin ve dosya adını belirtin
+                    def testngJarPath = 'C:\\Users\\Ugur Akyay\\Downloads\\testng-7.8.0 (1)\\testNG.jar'
+                    // Jar dosyasının varlığını kontrol edin
+                    if (fileExists(testngJarPath)) {
+                        echo 'TestNG jar file found.'
+                    } else {
+                        error 'TestNG jar file not found.'
+                    }
                 }
             }
         }
@@ -48,8 +50,9 @@ pipeline {
         // JDK'yı otomatik olarak yüklerken kullanılacak olan 'Java' aracı
         jdk 'Java'
     }
-}
 
-def fileExists(String path) {
-    new File(path).exists()
+    // fileExists fonksiyonunu pipeline içinde tanımlayalım
+    def fileExists(String path) {
+        new File(path).exists()
+    }
 }
