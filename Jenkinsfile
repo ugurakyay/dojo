@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
 
@@ -17,8 +16,8 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    // Doğru komutu kullanarak Java'yı çağırın
-                    bat "C:\\Program Files\\Java\\openjdk-21.0.2\\bin\\java.exe"
+                    // Doğru komutu kullanarak Java'yı başlatın
+                    bat "\"${tool 'Java'}\\bin\\java.exe\""
                 }
             }
         }
