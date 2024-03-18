@@ -29,7 +29,7 @@ pipeline {
             steps {
                 script {
                     // TestNG'nin bulunduğu dizin ve dosya adını belirtin
-                    def testngJarPath = 'C:\\Users\\Ugur Akyay\\Downloads\\testng-7.8.0 (1)\\testNG.jar'
+                    def testngJarPath = 'C:\\Users\\Ugur Akyay\\Downloads\\Java\\testNG.jar'
                     // Jar dosyasının varlığını kontrol edin
                     if (fileExists(testngJarPath)) {
                         echo 'TestNG jar file found.'
