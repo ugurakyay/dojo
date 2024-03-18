@@ -1,10 +1,8 @@
-
-
 pipeline {
     agent any
 
     environment {
-        PATH = "${tool 'JDK'}/bin:${env.PATH}"
+        PATH = "${tool 'Java'}/bin;" + env.PATH
     }
 
     stages {
@@ -18,7 +16,6 @@ pipeline {
             steps {
                 script {
                     // Diğer build adımları buraya eklenebilir
-                    tool 'maven'
                     bat 'mvn clean install'
                 }
             }
@@ -27,7 +24,9 @@ pipeline {
 
     // JDK'nın otomatik olarak yüklenmesini sağlayacak olan tool tanımı
     tools {
-        jdk 'JDK'
+        // JDK'yı otomatik olarak yüklerken kullanılacak olan 'Java' aracı
+        jdk 'Java'
     }
 }
+
 
