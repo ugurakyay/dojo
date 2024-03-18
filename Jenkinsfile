@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        // JDK'yı PATH ortam değişkenine eklemek için
+        // JDK'yı PATH ortam değişkenine ekleyin
         PATH = "${tool 'Java'}/bin;" + "${env.PATH}"
     }
 
@@ -24,7 +24,7 @@ pipeline {
             steps {
                 script {
                     // TestNG'nin bulunduğu dizin ve dosya adını belirtin
-                    def testngJarPath = "${WORKSPACE}/testng.jar"
+                    def testngJarPath = "${WORKSPACE}/path/to/testng.jar"
                     // Jar dosyasının varlığını kontrol edin
                     if (fileExists(testngJarPath)) {
                         echo 'TestNG jar file found.'
@@ -39,7 +39,7 @@ pipeline {
             steps {
                 script {
                     // Doğru komutu kullanarak Java'yı başlatın
-                    bat "\"${tool 'Java'}\\bin\\java.exe\" -cp ${WORKSPACE}\\testng.jar org.testng.TestNG TestNG.xml"
+                    bat "\"${tool 'Java'}\\bin\\java.exe\" -cp ${WORKSPACE}\\path\\to\\testng.jar org.testng.TestNG TestNG.xml"
                 }
             }
         }
@@ -51,4 +51,3 @@ pipeline {
         jdk 'Java'
     }
 }
-
