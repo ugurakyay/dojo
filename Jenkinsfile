@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
                     // Doğru komutu kullanarak Java'yı başlatın
-                    bat "\"${tool 'Java'}\\bin\\java.exe\""
+                    bat "\"${tool 'Java'}\\bin\\java.exe\" -version"
                 }
             }
         }
