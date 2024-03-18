@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {
         // Maven tool configuration
-        maven "Maven" // Maven aracının adını buraya ekleyin (Jenkins'de yapılandırılan ad)
+        maven "maven" // Maven aracının adını buraya ekleyin (Jenkins'de yapılandırılan ad)
     }
     stages {
         stage('Build') {
