@@ -29,7 +29,7 @@ pipeline {
                     if (fileExists(testngJarPath)) {
                         echo 'TestNG jar file found.'
                     } else {
-                        error 'TestNG jar file not found.'
+                        error 'TestNG jar file not found. Make sure the jar file is placed in the correct location.'
                     }
                 }
             }
