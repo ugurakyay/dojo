@@ -43,7 +43,7 @@ public class LoginPageObject extends PageObject {
         Thread.sleep(2000);
         browser.findElement(By.xpath("//*[@id=\"headlessui-menu-items-:rb:\"]")).click();
         Thread.sleep(5000);
-        browser.findElement(By.xpath("//*[@id=\"headlessui-dialog-:rd:\"]/div/div[2]/div[2]/button[1]")).click();
+        browser.findElement(By.xpath("/html/body/div[3]/div/div/div/div/div[2]/div[2]/button[1]")).click();
         Thread.sleep(5000);
 
 
