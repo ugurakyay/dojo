@@ -1,15 +1,21 @@
+
+
 pipeline {
     agent any
-    tools {
-        // Maven tool configuration
-        maven "maven" // Maven aracının adını buraya ekleyin (Jenkins'de yapılandırılan ad)
-    }
+
     stages {
+        stage('Checkout SCM') {
+            steps {
+                checkout scm
+            }
+        }
         stage('Build') {
             steps {
-                // Maven build steps
-                sh 'mvn clean install'
+                // Maven aracının adını buraya ekleyin (Jenkins'de yapılandırılan ad)
+                tool 'maven'
+                bat 'mvn clean install'
             }
         }
     }
 }
+
