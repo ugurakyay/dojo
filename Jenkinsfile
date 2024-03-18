@@ -22,18 +22,9 @@ pipeline {
 
         stage('Install TestNG') {
             steps {
-                // TestNG'nin yüklü olup olmadığını kontrol etme
-                script {
-                    def testngInstalled = bat(script: 'where testng', returnStatus: true)
-                    if (testngInstalled != 0) {
-                        // TestNG yüklü değilse, TestNG'nin jar dosyasını indirip belirli bir dizine kopyalayın
-                        // Bu adımı kendi gereksinimlerinize göre düzenleyin
-                        bat 'echo TestNG is not installed. Downloading...'
-                        // TestNG jar dosyasını indirme ve belirli bir dizine kopyalama adımları buraya gelecek
-                    } else {
-                        bat 'echo TestNG is already installed.'
-                    }
-                }
+                // Maven kullanarak TestNG'yi projeye ekleme
+                // Bu adımı, Jenkins sunucusunda Maven'in yüklü olduğu bir ortamda çalıştırmanız gerekir
+                bat 'mvn dependency:resolve'
             }
         }
 
