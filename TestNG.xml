@@ -14,6 +14,11 @@
             <class name="Tests.EmptyCredantialsTest"/>
         </classes>
     </test>
+    <test name="NewStoryCreate">
+        <classes>
+            <class name="Tests.NewStoryCreate"/>
+        </classes>
+    </test>
     <listeners>
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>

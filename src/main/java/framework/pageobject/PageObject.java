@@ -24,9 +24,5 @@ public abstract class PageObject {
     public abstract boolean isPresent();
 
 
-    public abstract void logOut() throws InterruptedException;
 
-    public abstract void WrongCredentials() throws InterruptedException;
-
-    public abstract void EmptyCredentials() throws InterruptedException;
 }
