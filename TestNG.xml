@@ -1,8 +1,12 @@
-<!--DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" -->
 <suite name="MyTestSuite">
     <test name="MyTest">
         <classes>
             <class name="Tests.LoginPageTest"/>
+        </classes>
+    </test>
+    <test name="LoginWrongCredentialsTest">
+        <classes>
+            <class name="Tests.LoginWrongCredentialsTest"/>
         </classes>
     </test>
     <listeners>

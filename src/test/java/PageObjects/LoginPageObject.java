@@ -50,9 +50,22 @@ public class LoginPageObject extends PageObject {
         Thread.sleep(5000);
         browser.findElement(By.xpath("/html/body/div[3]/div/div/div/div/div[2]/div[2]/button[1]")).click();
         Thread.sleep(5000);
+    }
+    @Override
+    public void WrongCredentials () throws InterruptedException {
 
+        Thread.sleep(5000);
+
+        browser.findElement(By.xpath("//*[@id=\"username\"]")).sendKeys("wrong");
+        browser.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("wrong");
+        browser.findElement(By.name("login")).click();
+
+        WebDriverWait wait = new WebDriverWait(browser, 10);
+        Assert.assertTrue(wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'Invalid username or password.')]"))).isDisplayed());
 
 
 
     }
+
+
 }
