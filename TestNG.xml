@@ -1,5 +1,5 @@
 <suite name="MyTestSuite">
-    <test name="MyTest">
+    <test name="MyLogin">
         <classes>
             <class name="Tests.LoginPageTest"/>
         </classes>
@@ -7,6 +7,11 @@
     <test name="LoginWrongCredentialsTest">
         <classes>
             <class name="Tests.LoginWrongCredentialsTest"/>
+        </classes>
+    </test>
+    <test name="EmptyCredantialsTest">
+        <classes>
+            <class name="Tests.EmptyCredantialsTest"/>
         </classes>
     </test>
     <listeners>

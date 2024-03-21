@@ -63,9 +63,21 @@ public class LoginPageObject extends PageObject {
         WebDriverWait wait = new WebDriverWait(browser, 10);
         Assert.assertTrue(wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'Invalid username or password.')]"))).isDisplayed());
 
+    }
 
+    @Override
+    public void EmptyCredentials() throws InterruptedException {
+        Thread.sleep(5000);
+
+        browser.findElement(By.xpath("//*[@id=\"username\"]")).sendKeys("");
+        browser.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("");
+        browser.findElement(By.name("login")).click();
+
+        WebDriverWait wait = new WebDriverWait(browser, 10);
+        Assert.assertTrue(wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'Invalid username or password.')]"))).isDisplayed());
 
     }
+
 
 
 }
