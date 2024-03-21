@@ -5,6 +5,7 @@ import framework.pageobject.PageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class LoginPageObject extends PageObject {
     @Override
@@ -33,6 +34,10 @@ public class LoginPageObject extends PageObject {
         browser.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys(password);
         browser.findElement(By.name("login")).click();
 
+        WebDriverWait wait = new WebDriverWait(browser, 10);
+        Assert.assertTrue(wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'Collections')]"))).isDisplayed());
+
+
 
     }
 
@@ -45,6 +50,8 @@ public class LoginPageObject extends PageObject {
         Thread.sleep(5000);
         browser.findElement(By.xpath("/html/body/div[3]/div/div/div/div/div[2]/div[2]/button[1]")).click();
         Thread.sleep(5000);
+
+
 
 
     }
