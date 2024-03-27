@@ -25,6 +25,16 @@
             <class name="Tests.NewStoryCreate2Test"/>
         </classes>
     </test>
+    <test name="NewStoryCreate3">
+        <classes>
+            <class name="Tests.NewStoryCreate3Test"/>
+        </classes>
+    </test>
+    <test name="NewStoryCreate4">
+        <classes>
+            <class name="Tests.NewStoryCreate4Test"/>
+        </classes>
+    </test>
     <test name="CancelStoryTest">
         <classes>
             <class name="Tests.CancelStoryTest"/>
