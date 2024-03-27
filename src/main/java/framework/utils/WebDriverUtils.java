@@ -48,6 +48,8 @@ public final class WebDriverUtils {
 
 
     private static WebDriver launchFirefox(DesiredCapabilities desiredCapabilities) {
+        System.setProperty("webdriver.firefox.bin", "/Applications/Firefox.app/Contents/MacOS/firefox");
+
         WebDriverManager.firefoxdriver().setup();
         return new FirefoxDriver(new FirefoxOptions().merge(desiredCapabilities));
     }

@@ -1,3 +1,4 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="MyTestSuite">
     <test name="MyLogin">
         <classes>
@@ -16,7 +17,17 @@
     </test>
     <test name="NewStoryCreate">
         <classes>
-            <class name="Tests.NewStoryCreate"/>
+            <class name="Tests.NewStoryCreateTest"/>
+        </classes>
+    </test>
+    <test name="NewStoryCreate2Test">
+        <classes>
+            <class name="Tests.NewStoryCreate2Test"/>
+        </classes>
+    </test>
+    <test name="CancelStoryTest">
+        <classes>
+            <class name="Tests.CancelStoryTest"/>
         </classes>
     </test>
     <listeners>

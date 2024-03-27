@@ -46,7 +46,7 @@ public class LoginPageObject extends PageObject {
         Thread.sleep(5000);
         browser.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div/div/header/div/div/div[3]/div")).click();
         Thread.sleep(2000);
-        browser.findElement(By.xpath("//*[@id=\"headlessui-menu-items-:rb:\"]")).click();
+        browser.findElement(By.xpath("//a[text()='Log out']")).click();
 
         Thread.sleep(5000);
         browser.findElement(By.xpath("/html/body/div[3]/div/div/div/div/div[2]/div[2]/button[1]")).click();
