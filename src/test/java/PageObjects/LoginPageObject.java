@@ -2,12 +2,17 @@ package PageObjects;
 
 import framework.config.ConfigReader;
 import framework.pageobject.PageObject;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import java.io.File;
+import java.io.IOException;
 
 import java.util.List;
 
@@ -74,4 +79,15 @@ public class LoginPageObject extends PageObject {
         WebDriverWait wait = new WebDriverWait(browser, 10);
         Assert.assertTrue(wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'Invalid username or password.')]"))).isDisplayed());
     }
+    /*public void takeScreenshot(String filename) {
+        File screenshotFile = ((TakesScreenshot) browser).getScreenshotAs(OutputType.FILE);
+        try {
+            // Ekran görüntüsünü belirtilen dosya adıyla kaydet
+            FileUtils.copyFile(screenshotFile, new File("/Users/ugurakyay/IdeaProjects/dojo/Screenshot/" + filename));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+     */
 }

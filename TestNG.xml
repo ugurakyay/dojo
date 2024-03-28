@@ -1,5 +1,6 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="MyTestSuite">
+
     <test name="MyLogin">
         <classes>
             <class name="Tests.LoginPageTest"/>
@@ -38,6 +39,16 @@
     <test name="CancelStoryTest">
         <classes>
             <class name="Tests.CancelStoryTest"/>
+        </classes>
+    </test>
+    <test name="LibraryTest">
+        <classes>
+            <class name="Tests.LibraryTest"/>
+        </classes>
+    </test>
+    <test name="LibraryCreateTest">
+        <classes>
+            <class name="Tests.LibraryCreateTest"/>
         </classes>
     </test>
     <listeners>

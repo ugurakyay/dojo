@@ -1,36 +1,39 @@
 package Tests;
 
+import PageObjects.LibraryPageObject;
 import PageObjects.LoginPageObject;
 import framework.BaseWebAutomationTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+public class LibraryTest extends BaseWebAutomationTest {
 
-public class LoginPageTest extends BaseWebAutomationTest {
     private LoginPageObject login;
+    private LibraryPageObject library;
 
     @BeforeMethod
     public void setUp() {
         login = new LoginPageObject();
-    }
-
-    @Test(description = "Test login functionality")
-    public void testLogin() throws InterruptedException {
-        login.navigateTo();
-        login.login();
-        login.logOut();
-
+        library = new LibraryPageObject();
     }
 
     @Override
     public void navigateTo() {
-        // Uygulanacak kodu buraya ekleyin
+
     }
+
+    @Test(description = "Test Library functionality")
+    public void testLibrary() throws InterruptedException {
+        login.navigateTo();
+        login.login();
+        library.ClickLibrary();
+        login.logOut();
+
+    }
+
 
     @Override
     public boolean isPresent() {
         return false;
     }
 }
-
-

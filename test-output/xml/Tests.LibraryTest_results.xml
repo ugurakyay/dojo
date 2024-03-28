@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="EmptyCredantialsTest"
+<testsuite name="LibraryTest"
            tests="1"
            failures="0"
            errors="0"
            skipped="0"
-           time="9,930">
+           time="27,628">
   <properties />
   
   
-            <testcase name="testLogin" time="9,930" classname="Tests.EmptyCredantialsTest" />
+            <testcase name="testLibrary" time="27,628" classname="Tests.LibraryTest" />
       
 </testsuite>
