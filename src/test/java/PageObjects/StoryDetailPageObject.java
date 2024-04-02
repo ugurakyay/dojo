@@ -3,12 +3,10 @@ package PageObjects;
 import framework.config.ConfigReader;
 import framework.pageobject.PageObject;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -109,20 +107,6 @@ public class StoryDetailPageObject extends PageObject { //Create Add Target Stat
         Thread.sleep(3000);
     }
 
-    public void NewActionAdd () throws InterruptedException {
-        Thread.sleep(3000);
-        browser.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div/div/div/div/main/div[5]/div/div[1]/div/div/div[2]/div[4]/div[1]/button[2]")).click();
-        Thread.sleep(2000);
-        browser.findElement(By.xpath("//*[@id=\"headlessui-menu-button-:r4e:\"]")).click();
-        Thread.sleep(2000);
-        Actions actions = new Actions(browser);
-        actions.sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ENTER).perform();
-        Thread.sleep(3000);
-        browser.findElement(By.xpath("//*[@id=\"headlessui-disclosure-panel-:r4t:\"]/div/form/div[1]/input[1]")).sendKeys("Test");
-        browser.findElement(By.xpath("//*[@id=\"headlessui-disclosure-panel-:r4t:\"]/div/form/div[2]/button[2]")).click();
-
-    }
-
     public void ZoomOut() throws InterruptedException {
         browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div[3]/div[1]/div[2]/div[3]")).click();
         Thread.sleep(1000);
@@ -133,6 +117,20 @@ public class StoryDetailPageObject extends PageObject { //Create Add Target Stat
         browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div[3]/div[1]/div[2]/div[3]")).click();
         Thread.sleep(1000);
         browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div[3]/div[1]/div[2]/div[3]")).click();
+        browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div[3]/div[1]/div[2]/div[4]/div[2]")).click();
+    }
+
+    public void RequiredField() throws InterruptedException {
+        browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div[3]/div[1]/div[2]/div[6]/div[2]")).click();
+        //Thread.sleep(2000);
+        //browser.findElement(By.xpath("/html/body/div[3]/div/div/div/div/div[2]/div[1]/div[2]/div/div/div[1]/select")).click();
+        Thread.sleep(2000);
+        Actions actions = new Actions(browser);
+        actions.sendKeys("c",Keys.ENTER).perform();
+        actions.sendKeys(Keys.TAB,Keys.SPACE).perform();
+        Thread.sleep(2000);
+        browser.findElement(By.xpath("/html/body/div[3]/div/div/div/div/div[2]/div[1]/div[2]/div/div/div[3]/button")).click();
+        Thread.sleep(2000);
     }
 
     public void StateAction() throws InterruptedException {
@@ -152,6 +150,13 @@ public class StoryDetailPageObject extends PageObject { //Create Add Target Stat
         Thread.sleep(3000);
         WebDriverWait wait = new WebDriverWait(browser, 10);
         Assert.assertTrue(wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'Deployed')]"))).isDisplayed());
+        browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div[3]/div[2]/div/button[1]")).click();
+        Thread.sleep(2000);
+        Assert.assertTrue(wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'Run')]"))).isDisplayed());
+        browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div[3]/div[2]/div/button[1]")).click();
+        Thread.sleep(2000);
+        Assert.assertTrue(wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'Undeployed')]"))).isDisplayed());
+
 
 
     }

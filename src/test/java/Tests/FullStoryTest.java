@@ -28,6 +28,7 @@ public class FullStoryTest extends BaseWebAutomationTest {
         Details.AddAction();
         Details.StateAction();
         Details.ZoomOut();
+        Details.RequiredField();
         Details.DeployButton();
         login.logOut();
     }
