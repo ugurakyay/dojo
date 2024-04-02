@@ -23,7 +23,7 @@ public class LibraryCreateTest extends BaseWebAutomationTest {
     }
 
     @Test(description = "Test Library functionality")
-    public void testLibrary() throws InterruptedException {
+    public void LibraryCreate() throws InterruptedException {
         login.navigateTo();
         login.login();
         library.ClickLibrary();

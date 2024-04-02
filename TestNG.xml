@@ -41,14 +41,14 @@
             <class name="Tests.CancelStoryTest"/>
         </classes>
     </test>
-    <test name="LibraryTest">
+    <test name="FullStoryTest">
         <classes>
-            <class name="Tests.LibraryTest"/>
+            <class name="Tests.FullStoryTest"/>
         </classes>
     </test>
-    <test name="LibraryCreateTest">
+    <test name="RemoveStoryTest">
         <classes>
-            <class name="Tests.LibraryCreateTest"/>
+            <class name="Tests.RemoveStoryTest"/>
         </classes>
     </test>
     <listeners>

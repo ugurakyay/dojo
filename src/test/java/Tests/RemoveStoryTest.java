@@ -1,28 +1,38 @@
 package Tests;
 
 import PageObjects.LoginPageObject;
+import PageObjects.RemoveStoryObject;
 import framework.BaseWebAutomationTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class EmptyCredantialsTest extends BaseWebAutomationTest {
+public class RemoveStoryTest extends BaseWebAutomationTest {
 
     private LoginPageObject login;
+    private RemoveStoryObject remove;
 
     @BeforeMethod
-    public void setUp() {
+
+    public void setUp(){
+
         login = new LoginPageObject();
+        remove = new RemoveStoryObject();
+
     }
 
-    @Test(description = "Test login functionality")
-    public void EmptyCredantial() throws InterruptedException {
+
+
+    @Test(description = "Test Remove story functionality")
+    public void testLogin() throws InterruptedException {
         login.navigateTo();
-        login.EmptyCredentials();
+        login.login();
+        remove.removeStory();
+        login.logOut();
 
     }
-
     @Override
     public void navigateTo() {
+
 
     }
 

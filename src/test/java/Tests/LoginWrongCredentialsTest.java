@@ -15,7 +15,7 @@ public class LoginWrongCredentialsTest extends BaseWebAutomationTest {
     }
 
     @Test(description = "Test login functionality")
-    public void testLogin() throws InterruptedException {
+    public void WrongLogin() throws InterruptedException {
         login.navigateTo();
         login.WrongCredentials();
 

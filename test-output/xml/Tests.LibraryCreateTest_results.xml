@@ -4,26 +4,26 @@
            failures="1"
            errors="0"
            skipped="0"
-           time="13,076">
+           time="13,072">
   <properties />
-            <testcase name="testLibrary" time="13,076" classname="Tests.LibraryCreateTest">
+            <testcase name="LibraryCreate" time="13,072" classname="Tests.LibraryCreateTest">
                 <failure type="org.openqa.selenium.NoSuchElementException"
                   message="Unable to locate element: //*[@id=&quot;headlessui-dialog-:r1t:&quot;]/div/div[2]/div[2]/button[2]
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;ugur-MacBook-Pro.local&apos;, ip: &apos;fe80:0:0:0:1cc8:2afe:7ebc:863b%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;14.4.1&apos;, java.version: &apos;21.0.2&apos;
+System info: host: &apos;ugur-MacBook-Pro.local&apos;, ip: &apos;fe80:0:0:0:c0f:671b:2d03:5494%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;14.4.1&apos;, java.version: &apos;21.0.2&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 124.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20240321230221, moz:geckodriverVersion: 0.34.0, moz:headless: false, moz:platformVersion: 23.4.0, moz:processID: 10751, moz:profile: /var/folders/2t/3n7y1vd13nd..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 5c3f4e05-5daf-4aeb-ae3e-7b66c2f572b4
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 124.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20240321230221, moz:geckodriverVersion: 0.34.0, moz:headless: false, moz:platformVersion: 23.4.0, moz:processID: 12009, moz:profile: /var/folders/2t/3n7y1vd13nd..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 038fa583-9684-4c6d-a642-6a22a613a2b6
 *** Element info: {Using=xpath, value=//*[@id=&quot;headlessui-dialog-:r1t:&quot;]/div/div[2]/div[2]/button[2]}"
               >
 <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: //*[@id="headlessui-dialog-:r1t:"]/div/div[2]/div[2]/button[2]
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'ugur-MacBook-Pro.local', ip: 'fe80:0:0:0:1cc8:2afe:7ebc:863b%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.4.1', java.version: '21.0.2'
+System info: host: 'ugur-MacBook-Pro.local', ip: 'fe80:0:0:0:c0f:671b:2d03:5494%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.4.1', java.version: '21.0.2'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 124.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20240321230221, moz:geckodriverVersion: 0.34.0, moz:headless: false, moz:platformVersion: 23.4.0, moz:processID: 10751, moz:profile: /var/folders/2t/3n7y1vd13nd..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 5c3f4e05-5daf-4aeb-ae3e-7b66c2f572b4
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 124.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20240321230221, moz:geckodriverVersion: 0.34.0, moz:headless: false, moz:platformVersion: 23.4.0, moz:processID: 12009, moz:profile: /var/folders/2t/3n7y1vd13nd..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 038fa583-9684-4c6d-a642-6a22a613a2b6
 *** Element info: {Using=xpath, value=//*[@id="headlessui-dialog-:r1t:"]/div/div[2]/div[2]/button[2]}
   java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
   java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
@@ -39,7 +39,7 @@ Session ID: 5c3f4e05-5daf-4aeb-ae3e-7b66c2f572b4
   org.openqa.selenium.By$ByXPath.findElement(By.java:353)
   org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
   PageObjects.LibraryPageObject.AddNewEvent(LibraryPageObject.java:34)
-  Tests.LibraryCreateTest.testLibrary(LibraryCreateTest.java:30)
+  Tests.LibraryCreateTest.LibraryCreate(LibraryCreateTest.java:30)
   java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
   java.base/java.lang.reflect.Method.invoke(Method.java:580)
   org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
