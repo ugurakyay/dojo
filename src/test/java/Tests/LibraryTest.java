@@ -27,6 +27,7 @@ public class LibraryTest extends BaseWebAutomationTest {
         login.navigateTo();
         login.login();
         library.ClickLibrary();
+        library.actionTemplate();
         login.logOut();
 
     }

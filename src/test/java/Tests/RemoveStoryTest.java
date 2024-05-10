@@ -23,7 +23,7 @@ public class RemoveStoryTest extends BaseWebAutomationTest {
 
 
     @Test(description = "Test Remove story functionality")
-    public void testLogin() throws InterruptedException {
+    public void removeStory() throws InterruptedException {
         login.navigateTo();
         login.login();
         remove.removeStory();

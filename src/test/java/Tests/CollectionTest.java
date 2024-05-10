@@ -1,5 +1,6 @@
 package Tests;
 
+import PageObjects.CollectionsPageObject;
 import PageObjects.LoginPageObject;
 import PageObjects.StoryDetailPageObject;
 import PageObjects.StoryPageObject;
@@ -7,30 +8,29 @@ import framework.BaseWebAutomationTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class NewStoryCreateTest extends BaseWebAutomationTest {
-
+public class CollectionTest extends BaseWebAutomationTest {
     private LoginPageObject login;
-    private StoryPageObject Story;
-
-    private StoryDetailPageObject Details;
-
+    private CollectionsPageObject collection;
 
     @BeforeMethod
     public void setUp() {
         login = new LoginPageObject();
-        Story = new StoryPageObject();
-        Details =new StoryDetailPageObject();
+        collection = new CollectionsPageObject();
     }
 
-    @Test(description = "Test login functionality")
-    public void storyAddNormal() throws InterruptedException {
+    @Test(description = "Test Collection functionality")
+    public void addCollection () throws InterruptedException {
         login.navigateTo();
         login.login();
-        Story.NewStory();
-        Details.AddDetailsNormal();
+        collection.addCollection();
+        collection.sortCollectionNewst();
+        collection.sortCollectionOldest();
+        collection.sortCollectionA_Z();
+        collection.sortCollectionZ_A();
+        collection.removeCollection();
         login.logOut();
-
     }
+
     @Override
     public void navigateTo() {
 
