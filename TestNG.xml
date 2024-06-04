@@ -51,6 +51,21 @@
             <class name="Tests.RemoveStoryTest"/>
         </classes>
     </test>
+    <test name="CollectionTest">
+        <classes>
+            <class name="Tests.CollectionTest"></class>
+        </classes>
+    </test>
+    <test name="LibraryTest">
+        <classes>
+            <class name="Tests.LibraryTest"></class>
+        </classes>
+    </test>
+    <test name="LibraryCreateTest">
+        <classes>
+            <class name="Tests.LibraryCreateTest"></class>
+        </classes>
+    </test>
     <listeners>
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>

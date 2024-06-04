@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="50,425">
+           time="51,389">
   <properties />
   
   
-            <testcase name="EndStateTest" time="50,425" classname="Tests.NewStoryCreate2Test" />
+            <testcase name="EndStateTest" time="51,389" classname="Tests.NewStoryCreate2Test" />
       
 </testsuite>

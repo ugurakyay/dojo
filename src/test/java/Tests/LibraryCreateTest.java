@@ -28,6 +28,8 @@ public class LibraryCreateTest extends BaseWebAutomationTest {
         login.login();
         library.ClickLibrary();
         library.AddNewEvent();
+        library.addNewEvent2();
+        library.dojoEvents();
         login.logOut();
 
     }

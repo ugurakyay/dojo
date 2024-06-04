@@ -5,10 +5,13 @@ import framework.pageobject.PageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import javax.print.DocFlavor;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 public class LibraryPageObject extends PageObject {
     @Override
@@ -33,15 +36,34 @@ public class LibraryPageObject extends PageObject {
     }
 
     public void AddNewEvent() throws InterruptedException {
-        browser.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div/div/div/div/main/div/div[1]/div/div[1]/button")).click();
-        browser.findElement(By.xpath("//*[@id=\"headlessui-dialog-:r1t:\"]/div/div[2]/div[2]/button[2]")).click();
-        String timeStamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmm"));
-        String nameWithTimeStamp = "Test_Automation_By_je_" + timeStamp;
-        browser.findElement(By.xpath("//*[@id=\"eventName\"]")).sendKeys(timeStamp);
-        browser.findElement(By.xpath("//*[@id=\"headlessui-dialog-:r1v:\"]/div/div[2]/div[1]/div[2]/div/div/div[3]/div/div/div[1]/div[2]/div")).click();
+        Thread.sleep(3000);
+        WebElement secondButton =browser.findElement(By.xpath("(//*[contains(@id, 'headlessui-disclosure-button')])[2]"));
+        secondButton.click();
+        Thread.sleep(3000);
+        Actions actions = new Actions(browser);
+        actions.sendKeys(Keys.TAB).sendKeys(Keys.ENTER).perform();
+        browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div/div[1]/div/div[3]/div[3]/nav/div/div/div[1]/div/div[1]/a/div[1]/span")).click();
+        Thread.sleep(3000);
+        browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div/div[2]/div/div[2]/div/div/div/div[3]/div/div/dl/div/div/dd/div/form/div[2]/button")).click();
+        Thread.sleep(3000);
+        browser.findElement(By.xpath("/html/body/div[3]/div/div/div/div/div[2]/div[2]/div/div/div/div/nav/div/a/span\n")).click();
+        Actions actions2 = new Actions(browser);
+        actions2.sendKeys(Keys.TAB).sendKeys(Keys.SPACE).perform();
+
         Thread.sleep(1000);
-        browser.findElement(By.xpath("//*[@id=\"react-select-3-option-3\"]")).click();
-        browser.findElement(By.xpath("//*[@id=\"headlessui-dialog-:r1v:\"]/div/div[2]/div[2]/button[1]")).click();
+        Actions actions3 = new Actions(browser);
+        actions3.sendKeys(Keys.TAB, Keys.TAB, Keys.TAB, Keys.TAB).sendKeys(Keys.SPACE).perform();
+        browser.findElement(By.xpath("/html/body/div[3]/div/div/div/div/div[2]/div[3]/button[1]")).click();
+
+    }
+    public void addNewEvent2() throws InterruptedException {
+        Thread.sleep(3000);
+        browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div/div[1]/div/div[3]/div[3]/nav/div/div/div[1]/div/div[4]/a/div[1]/span")).click();
+        Thread.sleep(2000);
+        browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div/div[2]/div/div[2]/div/div/div/div[3]/div/div/dl/div/div/dd/div/form/div[3]/button")).click();
+        Thread.sleep(3000);
+
+        browser.findElement(By.xpath("/html/body/div[3]/div/div/div/div/div[2]/div[3]/button[1]")).click();
 
     }
 
@@ -85,6 +107,19 @@ public class LibraryPageObject extends PageObject {
         Thread.sleep(2000);
 
 
+    }
+
+    public void dojoEvents() throws InterruptedException {
+        Thread.sleep(3000);
+        WebElement secondButton =browser.findElement(By.xpath("(//*[contains(@id, 'headlessui-disclosure-button')])[1]"));
+        secondButton.click();
+        Thread.sleep(2000);
+        browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div/div[1]/div/div[3]/div[1]/nav/div/div/div[1]/a/div[1]/span")).click();
+        Thread.sleep(3000);
+        browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div/div[2]/div/div[2]/div[2]/div[2]/div/div[2]/div[1]/div/div[1]/div/div/div[1]/div")).click();
+        Thread.sleep(3000);
+        browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div/div[2]/div/div[2]/div[2]/div[2]/div/div[2]/div[1]/div/div[1]/div/div/div[1]/div/div")).click();
+        Thread.sleep(2000);
     }
 
 

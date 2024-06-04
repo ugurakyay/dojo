@@ -11,13 +11,8 @@ public abstract class BaseWebAutomationTest {
 
 
     @AfterMethod
-
-   public void tearDown() {
-
-
-
-        WebDriverUtils.shutDown();
-
+    public void tearDown() {
+        WebDriverUtils.getBrowser().quit();
     }
 
 
@@ -25,12 +20,3 @@ public abstract class BaseWebAutomationTest {
 
     public abstract boolean isPresent();
 }
-
-
-
-
-
-
-
-
-

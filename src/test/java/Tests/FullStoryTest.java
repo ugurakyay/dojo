@@ -29,7 +29,7 @@ public class FullStoryTest extends BaseWebAutomationTest {
         Details.StateAction();
         Details.ZoomOut();
         Details.RequiredField();
-        Details.DeployButton();
+        Details.deployButton();
         login.logOut();
     }
     @Override

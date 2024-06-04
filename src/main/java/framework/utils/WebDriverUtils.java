@@ -66,11 +66,14 @@ public final class WebDriverUtils {
         WebDriverManager.chromedriver().setup();
         return new ChromeDriver(new ChromeOptions().merge(desiredCapabilities));
     }*/
-
     private static WebDriver launchChrome(DesiredCapabilities desiredCapabilities) {
         WebDriverManager.chromedriver().setup();
         return new ChromeDriver(new ChromeOptions().merge(desiredCapabilities));
     }
+
+
+
+
 
     public static void main(String[] args) {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();

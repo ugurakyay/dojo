@@ -10,6 +10,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
+
 public class StoryDetailPageObject extends PageObject { //Create Add Target State Story
     @Override
     public void navigateTo() {
@@ -145,7 +147,22 @@ public class StoryDetailPageObject extends PageObject { //Create Add Target Stat
         browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div[5]/div/div[1]/div/div/div[2]/div[4]/div[1]/div[2]/div/div/div/dl/div/div/dd/div/form/div[2]/button[2]")).click();
     }
 
-    public void DeployButton() throws InterruptedException {
+
+
+    public void deployButton() throws InterruptedException {
+        browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div[3]/div[2]/div/button[1]")).click();
+        Thread.sleep(3000);
+        WebDriverWait wait = new WebDriverWait(browser, Duration.ofSeconds(10));
+        Assert.assertTrue(wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'Deployed')]"))).isDisplayed());
+        browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div[3]/div[2]/div/button[1]")).click();
+        Thread.sleep(2000);
+        Assert.assertTrue(wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'Run')]"))).isDisplayed());
+        browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div[3]/div[2]/div/button[1]")).click();
+        Thread.sleep(2000);
+        Assert.assertTrue(wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'Undeployed')]"))).isDisplayed());
+    }
+
+    /*public void DeployButton() throws InterruptedException {
         browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div[3]/div[2]/div/button[1]")).click();
         Thread.sleep(3000);
         WebDriverWait wait = new WebDriverWait(browser, 10);
@@ -160,6 +177,8 @@ public class StoryDetailPageObject extends PageObject { //Create Add Target Stat
 
 
     }
+
+     */
 
 
 

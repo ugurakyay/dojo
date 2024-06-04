@@ -4,6 +4,7 @@ import PageObjects.LoginPageObject;
 import PageObjects.StoryDetailPageObject;
 import PageObjects.StoryPageObject;
 import framework.BaseWebAutomationTest;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -16,6 +17,7 @@ public class NewStoryCreate2Test extends BaseWebAutomationTest {
 
     @BeforeMethod
     public void setUp() {
+
         login = new LoginPageObject();
         Story = new StoryPageObject();
         Details =new StoryDetailPageObject();

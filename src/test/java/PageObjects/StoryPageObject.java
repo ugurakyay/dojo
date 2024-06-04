@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -44,7 +46,7 @@ public class StoryPageObject extends LoginPageObject{
         browser.findElement(By.xpath("//button[contains(text(), 'Create')]")).click();
 
         //browser.findElement(By.xpath("//*[@id=\"headlessui-dialog-:rc:\"]/div/div[2]/div[2]/button[1]")).click();
-        WebDriverWait wait = new WebDriverWait(browser, 10);
+        WebDriverWait wait = new WebDriverWait(browser, Duration.ofSeconds(10));
         Assert.assertTrue(wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'Story Builder')]"))).isDisplayed());
 
     }

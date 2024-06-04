@@ -14,6 +14,7 @@ import org.openqa.selenium.TakesScreenshot;
 import java.io.File;
 import java.io.IOException;
 
+import java.time.Duration;
 import java.util.List;
 
 public class LoginPageObject extends PageObject {
@@ -34,6 +35,8 @@ public class LoginPageObject extends PageObject {
         return false;
     }
 
+
+
     public void login() throws InterruptedException {
         Thread.sleep(5000);
         String userName = ConfigReader.getInstance().getUserName();
@@ -42,7 +45,7 @@ public class LoginPageObject extends PageObject {
         browser.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys(password);
         browser.findElement(By.name("login")).click();
 
-        WebDriverWait wait = new WebDriverWait(browser, 10);
+        WebDriverWait wait = new WebDriverWait(browser, Duration.ofSeconds(10));
         Assert.assertTrue(wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'Collections')]"))).isDisplayed());
     }
 
@@ -53,8 +56,8 @@ public class LoginPageObject extends PageObject {
         Thread.sleep(2000);
         browser.findElement(By.xpath("//a[text()='Log out']")).click();
 
-        Thread.sleep(5000);
-        browser.findElement(By.xpath("/html/body/div[3]/div/div/div/div/div[2]/div[2]/button[1]")).click();
+        Thread.sleep(4000);
+        browser.findElement(By.xpath("/html/body/div[3]/div/div/div/div/div[2]/div[3]/button[1]")).click();
         Thread.sleep(5000);
     }
 
@@ -65,7 +68,7 @@ public class LoginPageObject extends PageObject {
         browser.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("wrong");
         browser.findElement(By.name("login")).click();
 
-        WebDriverWait wait = new WebDriverWait(browser, 10);
+        WebDriverWait wait = new WebDriverWait(browser, Duration.ofSeconds(10));
         Assert.assertTrue(wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'Invalid username or password.')]"))).isDisplayed());
     }
 
@@ -76,7 +79,7 @@ public class LoginPageObject extends PageObject {
         browser.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("");
         browser.findElement(By.name("login")).click();
 
-        WebDriverWait wait = new WebDriverWait(browser, 10);
+        WebDriverWait wait = new WebDriverWait(browser, Duration.ofSeconds(10));
         Assert.assertTrue(wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'Invalid username or password.')]"))).isDisplayed());
     }
     /*public void takeScreenshot(String filename) {
