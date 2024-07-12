@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="52,538">
+           time="48,633">
   <properties />
   
   
-            <testcase name="storyAddNormal" time="52,538" classname="Tests.NewStoryCreateTest" />
+            <testcase name="storyAddNormal" time="48,633" classname="Tests.NewStoryCreateTest" />
       
 </testsuite>

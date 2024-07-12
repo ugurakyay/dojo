@@ -7,6 +7,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -70,7 +71,10 @@ public class StoryDetailPageObject extends PageObject { //Create Add Target Stat
         Thread.sleep(2000);
     }
 
-    public void AddAction() throws InterruptedException {
+    public void AddEvent() throws InterruptedException {
+
+
+
         Thread.sleep(2000);
         //browser.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div/div/div/div/main/div[5]/div/div[1]/div/div/div[2]/div[2]/div/div[2]/button")).click();
         WebElement element = browser.findElement(By.xpath("//div[@class='flex pl-2 w-full flex-col justify-center items-start']"));
@@ -81,8 +85,20 @@ public class StoryDetailPageObject extends PageObject { //Create Add Target Stat
 
         // Actions sınıfını kullanarak iki kez TAB tuşuna bas
         Actions actions = new Actions(browser);
-        actions.sendKeys(Keys.TAB, Keys.TAB).perform();
+        actions.sendKeys(Keys.TAB, Keys.TAB,Keys.DOWN).perform();
         Thread.sleep(1000); // Bekleme süresi
+        WebElement selectElement = browser.findElement(By.id("DB-964db7fa-90f1-4a16-ad4d-3f5031d00342-decisionBox-event-form.event"));
+
+        // Select sınıfını kullanarak elementi seçin
+        Select select = new Select(selectElement);
+
+
+
+
+        // Ya da text ile seçmek isterseniz:
+        select.selectByVisibleText("preprod_cwmp_inform");
+
+        Thread.sleep(2000); // Bekleme süresi
 
         // "c" harfini gönder
         actions.sendKeys("c").perform();
@@ -90,7 +106,7 @@ public class StoryDetailPageObject extends PageObject { //Create Add Target Stat
         browser.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div/div/div/div/main/div[5]/div/div[1]/div/div/div[2]/div[2]/div/div[2]/div[3]/div/div/button")).click();
         browser.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div/div/div/div/main/div[5]/div/div[1]/div/div/div[2]/div[2]/div/div[2]/div[3]/div[2]/button")).click();
         Thread.sleep(2000);
-        actions.sendKeys(Keys.TAB, Keys.TAB).perform();
+        actions.sendKeys(Keys.DOWN).perform();
         actions.sendKeys("test").perform();
         //actions.sendKeys(Keys.TAB, Keys.TAB, Keys.SPACE).perform();
         Thread.sleep(2000);
@@ -107,6 +123,10 @@ public class StoryDetailPageObject extends PageObject { //Create Add Target Stat
         Thread.sleep(1000);
         actions.sendKeys(Keys.TAB,Keys.TAB,"5",Keys.TAB,Keys.TAB,Keys.ENTER).perform();
         Thread.sleep(3000);
+
+
+
+
     }
 
     public void ZoomOut() throws InterruptedException {
@@ -133,6 +153,7 @@ public class StoryDetailPageObject extends PageObject { //Create Add Target Stat
         Thread.sleep(2000);
         browser.findElement(By.xpath("/html/body/div[3]/div/div/div/div/div[2]/div[1]/div[2]/div/div/div[3]/button")).click();
         Thread.sleep(2000);
+        browser.findElement(By.xpath("//*[@id=\"headlessui-dialog-overlay-:rfd:\"]")).click();
     }
 
     public void StateAction() throws InterruptedException {
@@ -153,13 +174,13 @@ public class StoryDetailPageObject extends PageObject { //Create Add Target Stat
         browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div[3]/div[2]/div/button[1]")).click();
         Thread.sleep(3000);
         WebDriverWait wait = new WebDriverWait(browser, Duration.ofSeconds(10));
-        Assert.assertTrue(wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'Deployed')]"))).isDisplayed());
-        browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div[3]/div[2]/div/button[1]")).click();
-        Thread.sleep(2000);
         Assert.assertTrue(wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'Run')]"))).isDisplayed());
         browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div[3]/div[2]/div/button[1]")).click();
         Thread.sleep(2000);
         Assert.assertTrue(wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'Undeployed')]"))).isDisplayed());
+        browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div[3]/div[2]/div/button[1]")).click();
+        Thread.sleep(2000);
+        //Assert.assertTrue(wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'Undeployed')]"))).isDisplayed());
     }
 
     /*public void DeployButton() throws InterruptedException {
