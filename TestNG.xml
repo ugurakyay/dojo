@@ -65,6 +65,11 @@
             <class name="Tests.LibraryCreateTest"></class>
         </classes>
     </test>
+    <test name="ListenerTest">
+        <classes>
+            <class name="Tests.ListenerTest"></class>
+        </classes>
+    </test>
     <listeners>
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
