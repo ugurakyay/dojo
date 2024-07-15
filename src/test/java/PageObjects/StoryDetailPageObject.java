@@ -2,6 +2,7 @@ package PageObjects;
 
 import framework.config.ConfigReader;
 import framework.pageobject.PageObject;
+import org.checkerframework.checker.index.qual.PolyUpperBound;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -11,6 +12,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.security.Key;
 import java.time.Duration;
 
 public class StoryDetailPageObject extends PageObject { //Create Add Target State Story
@@ -125,6 +127,14 @@ public class StoryDetailPageObject extends PageObject { //Create Add Target Stat
         Thread.sleep(3000);
 
 
+
+
+    }
+    public void addEvent() throws InterruptedException {
+        browser.findElement(By.xpath("//div[@class='flex pl-2 w-full flex-col justify-center items-start']")).click();
+        Thread.sleep(2000);
+        Actions actions= new Actions(browser);
+        actions.sendKeys(Keys.TAB,Keys.TAB,Keys.ENTER, Keys.TAB, Keys.TAB).perform();
 
 
     }

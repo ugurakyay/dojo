@@ -1,6 +1,7 @@
 package PageObjects;
 
 import framework.config.ConfigReader;
+import framework.pageobject.PageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -10,7 +11,7 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class StoryPageObject extends LoginPageObject{
+public class StoryPageObject extends PageObject {
 
     @Override
     public void navigateTo() {

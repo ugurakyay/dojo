@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriverService;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class ListenerTest extends BaseWebAutomationTest {
+public class ListenerDojoTest extends BaseWebAutomationTest {
     private LoginPageObject login;
     private ListenerPageObject listner;
     private ChromeDriverService service;

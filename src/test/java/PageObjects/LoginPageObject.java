@@ -10,6 +10,10 @@ import org.testng.Assert;
 import java.time.Duration;
 
 public class LoginPageObject extends PageObject {
+    public LoginPageObject() {
+
+    }
+
     @Override
     public void navigateTo() {
         String url = ConfigReader.getInstance().getHost();

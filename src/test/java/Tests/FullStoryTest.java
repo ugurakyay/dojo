@@ -26,6 +26,7 @@ public class FullStoryTest extends BaseWebAutomationTest {
         Story.NewStory();
         Details.AddDetailsNormal();
         //Details.AddEvent();
+        Details.addEvent();
         Details.StateAction();
         Details.ZoomOut();
         //Details.RequiredField();
