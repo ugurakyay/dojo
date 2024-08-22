@@ -1,8 +1,9 @@
 package Tests;
 
 import PageObjects.LoginPageObject;
-import PageObjects.StoryDetailPageObject;
+import PageObjects.StoryActionsPageObject;
 import PageObjects.StoryPageObject;
+import PageObjects.StoryStatesPageObject;
 import framework.BaseWebAutomationTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -11,26 +12,29 @@ public class FullStoryTest extends BaseWebAutomationTest {
     private LoginPageObject login;
     private StoryPageObject Story;
 
-    private StoryDetailPageObject Details;
+    private StoryActionsPageObject Actions;
+    private StoryStatesPageObject States;
 
     @BeforeMethod
     public void setUp() {
         login = new LoginPageObject();
         Story = new StoryPageObject();
-        Details =new StoryDetailPageObject();
+        Actions =new StoryActionsPageObject();
+        States=new StoryStatesPageObject();
+
     }
     @Test(description = "Test login functionality")
     public void FullStory() throws InterruptedException{
         login.navigateTo();
         login.login();
         Story.NewStory();
-        Details.AddDetailsNormal();
+        States.addDetailsNormal();
         //Details.AddEvent();
-        Details.addEvent();
-        Details.StateAction();
-        Details.ZoomOut();
+        Actions.addEvent();
+        Actions.stateAction();
+        Actions.zoomOut();
         //Details.RequiredField();
-        Details.deployButton();
+        Actions.deployButton();
         login.logOut();
     }
     @Override

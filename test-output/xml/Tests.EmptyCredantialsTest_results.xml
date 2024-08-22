@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="17,295">
+           time="9,610">
   <properties />
   
   
-            <testcase name="EmptyCredantial" time="17,295" classname="Tests.EmptyCredantialsTest" />
+            <testcase name="EmptyCredantial" time="9,610" classname="Tests.EmptyCredantialsTest" />
       
 </testsuite>

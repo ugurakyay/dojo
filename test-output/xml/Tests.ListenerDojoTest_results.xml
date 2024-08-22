@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="NewStoryCreate2Test"
+<testsuite name="ListenerTest"
            tests="1"
            failures="0"
            errors="0"
            skipped="0"
-           time="49,267">
+           time="34,174">
   <properties />
   
   
-            <testcase name="EndStateTest" time="49,267" classname="Tests.NewStoryCreate2Test" />
+            <testcase name="testLogin" time="34,174" classname="Tests.ListenerDojoTest" />
       
 </testsuite>

@@ -1,8 +1,9 @@
 package Tests;
 
 import PageObjects.LoginPageObject;
-import PageObjects.StoryDetailPageObject;
+import PageObjects.StoryActionsPageObject;
 import PageObjects.StoryPageObject;
+import PageObjects.StoryStatesPageObject;
 import framework.BaseWebAutomationTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.testng.annotations.BeforeMethod;
@@ -12,7 +13,8 @@ public class NewStoryCreate2Test extends BaseWebAutomationTest {
     private LoginPageObject login;
     private StoryPageObject Story;
 
-    private StoryDetailPageObject Details;
+    private StoryStatesPageObject States;
+    private StoryActionsPageObject Actions;
 
 
     @BeforeMethod
@@ -20,7 +22,8 @@ public class NewStoryCreate2Test extends BaseWebAutomationTest {
 
         login = new LoginPageObject();
         Story = new StoryPageObject();
-        Details =new StoryDetailPageObject();
+        States =new StoryStatesPageObject();
+        Actions = new StoryActionsPageObject();
     }
 
     @Test(description = "Test login functionality")
@@ -28,7 +31,7 @@ public class NewStoryCreate2Test extends BaseWebAutomationTest {
         login.navigateTo();
         login.login();
         Story.NewStory();
-        Details.AddEndState();
+        States.addEndState();
         login.logOut();
     }
 

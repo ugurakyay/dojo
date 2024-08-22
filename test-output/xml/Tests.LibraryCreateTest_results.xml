@@ -4,27 +4,27 @@
            failures="1"
            errors="0"
            skipped="0"
-           time="34,871">
+           time="23,783">
   <properties />
-            <testcase name="LibraryCreate" time="34,871" classname="Tests.LibraryCreateTest">
+            <testcase name="LibraryCreate" time="23,783" classname="Tests.LibraryCreateTest">
                 <failure type="org.openqa.selenium.NoSuchElementException"
-                  message="Unable to locate element: /html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div/div[1]/div/div[3]/div[3]/nav/div/div/div[1]/div/div[4]/a/div[1]/span
+                  message="Unable to locate element: /html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div/div[1]/div/div[3]/div[3]/nav/div/div/div[1]/div/div[1]/a/div[1]/span
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: &apos;4.1.1&apos;, revision: &apos;e8fcc2cecf&apos;
-System info: host: &apos;ugur-MacBook-Pro.local&apos;, ip: &apos;fe80:0:0:0:140e:5e9c:6387:7ea5%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;14.5&apos;, java.version: &apos;21.0.2&apos;
+System info: host: &apos;ugur-MacBook-Pro.local&apos;, ip: &apos;fe80:0:0:0:476:b16f:f08e:9a8f%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.0&apos;, java.version: &apos;21.0.2&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [ac3b52ae-e0bb-4357-ab5b-8a99aa4a3165, findElement {using=xpath, value=/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div/div[1]/div/div[3]/div[3]/nav/div/div/div[1]/div/div[4]/a/div[1]/span}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 126.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20240526221752, moz:debuggerAddress: 127.0.0.1:60878, moz:geckodriverVersion: 0.34.0, moz:headless: false, moz:platformVersion: 23.5.0, moz:processID: 55225, moz:profile: /var/folders/2t/3n7y1vd13nd..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), se:cdp: ws://127.0.0.1:60878/devtoo..., se:cdpVersion: 85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
-Session ID: ac3b52ae-e0bb-4357-ab5b-8a99aa4a3165"
+Command: [63ea98c4-ddeb-4c9e-af83-5f09bf5348f0, findElement {using=xpath, value=/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div/div[1]/div/div[3]/div[3]/nav/div/div/div[1]/div/div[1]/a/div[1]/span}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 129.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20240819150008, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 24.0.0, moz:processID: 31570, moz:profile: /var/folders/2t/3n7y1vd13nd..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
+Session ID: 63ea98c4-ddeb-4c9e-af83-5f09bf5348f0"
               >
-<![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: /html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div/div[1]/div/div[3]/div[3]/nav/div/div/div[1]/div/div[4]/a/div[1]/span
+<![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: /html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div/div[1]/div/div[3]/div[3]/nav/div/div/div[1]/div/div[1]/a/div[1]/span
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.1.1', revision: 'e8fcc2cecf'
-System info: host: 'ugur-MacBook-Pro.local', ip: 'fe80:0:0:0:140e:5e9c:6387:7ea5%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.5', java.version: '21.0.2'
+System info: host: 'ugur-MacBook-Pro.local', ip: 'fe80:0:0:0:476:b16f:f08e:9a8f%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.0', java.version: '21.0.2'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [ac3b52ae-e0bb-4357-ab5b-8a99aa4a3165, findElement {using=xpath, value=/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div/div[1]/div/div[3]/div[3]/nav/div/div/div[1]/div/div[4]/a/div[1]/span}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 126.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20240526221752, moz:debuggerAddress: 127.0.0.1:60878, moz:geckodriverVersion: 0.34.0, moz:headless: false, moz:platformVersion: 23.5.0, moz:processID: 55225, moz:profile: /var/folders/2t/3n7y1vd13nd..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), se:cdp: ws://127.0.0.1:60878/devtoo..., se:cdpVersion: 85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
-Session ID: ac3b52ae-e0bb-4357-ab5b-8a99aa4a3165
+Command: [63ea98c4-ddeb-4c9e-af83-5f09bf5348f0, findElement {using=xpath, value=/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div/div[1]/div/div[3]/div[3]/nav/div/div/div[1]/div/div[1]/a/div[1]/span}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 129.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20240819150008, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 24.0.0, moz:processID: 31570, moz:profile: /var/folders/2t/3n7y1vd13nd..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
+Session ID: 63ea98c4-ddeb-4c9e-af83-5f09bf5348f0
   java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
   java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
   java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -39,18 +39,21 @@ Session ID: ac3b52ae-e0bb-4357-ab5b-8a99aa4a3165
   org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
   org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
   org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
-  PageObjects.LibraryPageObject.addNewEvent2(LibraryPageObject.java:61)
-  Tests.LibraryCreateTest.LibraryCreate(LibraryCreateTest.java:31)
+  PageObjects.LibraryPageObject.AddNewEvent(LibraryPageObject.java:45)
+  Tests.LibraryCreateTest.LibraryCreate(LibraryCreateTest.java:30)
   java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
   java.base/java.lang.reflect.Method.invoke(Method.java:580)
-  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-  org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-  org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-  org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-  org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-  org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+  org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+  org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+  org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+  org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+  org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+  org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+  org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+  org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+  java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+  java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+  org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
   java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
   java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
   java.base/java.lang.Thread.run(Thread.java:1583)

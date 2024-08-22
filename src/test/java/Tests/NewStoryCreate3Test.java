@@ -1,8 +1,8 @@
 package Tests;
 
 import PageObjects.LoginPageObject;
-import PageObjects.StoryDetailPageObject;
 import PageObjects.StoryPageObject;
+import PageObjects.StoryStatesPageObject;
 import framework.BaseWebAutomationTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -11,12 +11,12 @@ public class NewStoryCreate3Test extends BaseWebAutomationTest {
     private LoginPageObject login;
     private StoryPageObject Story;
 
-    private StoryDetailPageObject Details;
+    private StoryStatesPageObject States;
     @BeforeMethod
     public void setUp() {
         login = new LoginPageObject();
         Story = new StoryPageObject();
-        Details =new StoryDetailPageObject();
+        States=new StoryStatesPageObject();
     }
 
     @Test(description = "Test login functionality")
@@ -24,7 +24,7 @@ public class NewStoryCreate3Test extends BaseWebAutomationTest {
         login.navigateTo();
         login.login();
         Story.NewStory();
-        Details.OneEventState();
+        States.oneEventState();
         login.logOut();
     }
 
