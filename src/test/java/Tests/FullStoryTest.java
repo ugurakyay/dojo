@@ -29,7 +29,6 @@ public class FullStoryTest extends BaseWebAutomationTest {
         login.login();
         Story.NewStory();
         States.addDetailsNormal();
-        Actions.addEvent();
         Actions.addPlayerVarial();
         Actions.stateAction();
         Actions.deleteStateAction();

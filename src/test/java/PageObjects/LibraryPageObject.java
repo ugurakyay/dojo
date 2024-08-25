@@ -80,31 +80,43 @@ public class LibraryPageObject extends PageObject {
     public void actionTemplate () throws InterruptedException {
         Actions actions = new Actions(browser);
 
-         ///html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div/div[1]/div/div[3]/div[1]/nav/div/a/button/svg
-        browser.findElement(By.xpath("//*[@id=\"headlessui-disclosure-button-:rh:\"]")).click();
+        // "DOJO Templates" metnine sahip span elementini bul ve tıklat
+        WebElement dojoTemplatesElement = browser.findElement(By.xpath("//span[text()='DOJO Templates']"));
+        dojoTemplatesElement.click();
+
+// "DOJO Templates" metnine sahip elementin içinde bulunan butonu bul ve tıklat
+        WebElement dojoButton = browser.findElement(By.xpath("//span[text()='DOJO Templates']/ancestor::a//button[@class='disclosure pr-3']"));
+        dojoButton.click();
+
+        // "Action Templates" metnine sahip span elementini bul
+        WebElement actionTemplatesElement = browser.findElement(By.xpath("//span[text()='Action Templates']"));
+
+// "Action Templates" elementinin ebeveyni olan 'a' etiketini bul
+        WebElement actionTemplatesParent = actionTemplatesElement.findElement(By.xpath("./ancestor::a"));
+
+// Bu 'a' etiketi içindeki buton elementini bul ve tıkla
+        WebElement buttonInsideActionTemplates = actionTemplatesParent.findElement(By.xpath(".//button[@class='disclosure pr-3']"));
+        buttonInsideActionTemplates.click();
+
+        browser.findElement(By.xpath("//button[contains(text(), 'Add new folder')]\n")).click();
+        String timeStamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmm"));
+        String nameWithTimeStamp = "Test_Automation_By_je_" + timeStamp;
+        browser.findElement(By.xpath("//input[@id='prompt-form.input']\n")).sendKeys(nameWithTimeStamp);
+        browser.findElement(By.xpath("//button[text()='Create']\n")).click();
+        browser.findElement(By.xpath("//span[text()='WaitAction']\n")).click();
+        browser.findElement(By.xpath("//input[@name='duration']")).sendKeys("4");
+        browser.findElement(By.xpath("//button[text()='Save']\n")).click();
         Thread.sleep(2000);
         actions.sendKeys(Keys.TAB,Keys.ENTER).perform();
-        Thread.sleep(1000);
-        Thread.sleep(2000);
-        browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div/div[1]/div/div[3]/div[3]/nav/div/div/div[1]/div/div[3]/a/div[1]/span")).click();
-        //browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div/div[1]/div/div[3]/div[3]/nav/div/div/div[1]/div/div[1]/a")).click();
-        Thread.sleep(3000);
-        actions.moveToElement(browser.findElement(By.tagName("body"))).click().sendKeys(Keys.END).perform();
-        Thread.sleep(2000);
-        browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div/div[2]/div/div[2]/div/div/div/div[3]/div/div/dl/div/div/dd/div/form/div[1]/div[1]/div/div/textarea")).click();
-        browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div/div[2]/div/div[2]/div/div/div/div[3]/div/div/dl/div/div/dd/div/form/div[1]/div[1]/div/div/textarea")).sendKeys("{}");
-        browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div/div[2]/div/div[2]/div/div/div/div[3]/div/div/dl/div/div/dd/div/form/div[2]/button")).click();
-        //browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div/div[2]/div/div[2]/div/div/div/div[3]/div/div/dl/div/div/dd/div/form/div[2]/button")).click();
-        Thread.sleep(2000);
-        actions.sendKeys(Keys.TAB, Keys.ENTER,Keys.TAB,Keys.TAB, Keys.ENTER).perform();
-        Thread.sleep(2000);
-        browser.findElement(By.xpath("/html/body/div[3]/div/div/div/div/div[2]/div[3]/button[1]")).click();
-        Thread.sleep(2000);
-        browser.findElement(By.xpath("//*[@id=\"headlessui-disclosure-button-:rh:\"]")).click();
-        Thread.sleep(2000);
-        browser.findElement(By.xpath("//*[@id=\"headlessui-disclosure-button-:rf:\"]")).click();
-        actions.sendKeys(Keys.TAB, Keys.TAB, Keys.TAB, Keys.ENTER).perform();
-        Thread.sleep(2000);
+        actions.sendKeys(Keys.TAB,Keys.TAB).perform();
+        browser.findElement(By.xpath("//button[text()='OK']")).click();
+
+
+
+
+
+
+
 
 
     }

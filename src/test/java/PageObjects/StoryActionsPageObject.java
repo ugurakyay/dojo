@@ -9,10 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
 import java.time.Duration;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 
 public class StoryActionsPageObject extends PageObject { // Story Actions
 
@@ -146,5 +143,22 @@ public class StoryActionsPageObject extends PageObject { // Story Actions
         Assert.assertTrue(wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'Undeployed')]"))).isDisplayed());
         browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div[3]/div[2]/div/button[1]")).click();
         Thread.sleep(2000);
+    }
+
+    public void requirement() throws InterruptedException {
+        browser.findElement(By.xpath("//div[@class='tooltip-content']/span\n")).click();
+        Thread.sleep(5000);
+        // Dropdown menüsünü açın
+        WebElement dropdown = browser.findElement(By.xpath("//select"));
+        dropdown.click();
+
+// 'preprod_cwmp_inform' metnini içeren seçeneği seçin
+        WebElement option = browser.findElement(By.xpath("//option[text()='preprod_cwmp_inform']"));
+        option.click();
+
+
+
+        browser.findElement(By.xpath("//input[@id='person-preprod_cwmp_inform_Temperature']\n")).click();
+        browser.findElement(By.xpath("//button[text()='Save for current event']\n")).click();
     }
 }
