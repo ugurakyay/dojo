@@ -34,7 +34,6 @@ public class FullStoryTest extends BaseWebAutomationTest {
         Actions.stateAction();
         Actions.deleteStateAction();
         Actions.zoomOut();
-        //Details.RequiredField();
         Actions.deployButton();
         login.logOut();
     }

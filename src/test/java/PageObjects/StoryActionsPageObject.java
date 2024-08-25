@@ -27,6 +27,7 @@ public class StoryActionsPageObject extends PageObject { // Story Actions
     }
 
     public void addEvent() throws InterruptedException {
+        Thread.sleep(2000);
         WebElement element = browser.findElement(By.xpath("//div[@class='flex pl-2 w-full flex-col justify-center items-start']"));
         element.click();
         Thread.sleep(1000);

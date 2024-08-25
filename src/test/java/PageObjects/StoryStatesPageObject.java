@@ -38,14 +38,13 @@ public class StoryStatesPageObject extends PageObject { //Create Add Target Stat
     }
 
     public void addEndState() throws InterruptedException {
-        Thread.sleep(5000);
-        browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div[5]/div/div[1]/div/div/div[2]/div[2]/div/div[2]/div[4]/div")).click();
+        browser.findElement(By.cssSelector("div.w-full.relative.box-border.flex.flex-col.justify-center.items-start.border-black > div:nth-child(6) > div button\n")).click();
         Thread.sleep(2000);
         browser.findElement(By.xpath("//a[text()='Add Target State']")).click();
-        Thread.sleep(2000);
-        browser.findElement(By.xpath("//*[@id=\"prompt-form.input\"]")).sendKeys("Test");
-        browser.findElement(By.xpath("//*[@id=\"prompt-form.stateType\"]/option[2]")).click();
-        browser.findElement(By.xpath("//button[text()='OK']")).click();
+        browser.findElement(By.xpath("//input[@id='prompt-form.input']")).sendKeys("Automation");
+        browser.findElement(By.xpath("//select[@id='prompt-form.stateType']/option[text()='End State']")).click();
+        browser.findElement(By.xpath("//button[text()='OK']\n")).click();
+
     }
 
     public void oneEventState() throws InterruptedException {

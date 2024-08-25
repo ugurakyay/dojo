@@ -1,0 +1,1 @@
+{"uuid":"b15e8966-7e00-4d0a-a28b-72222b883d42","name":"Tests.FullStoryTest.setUp","children":["7fda960d-9a95-4524-94e6-39956903b79b"],"description":"","befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1724584883361,"stop":1724584886762}],"afters":[],"start":1724584883361,"stop":1724584886763}
