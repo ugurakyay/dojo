@@ -12,8 +12,10 @@ public class LoginPageTest extends BaseWebAutomationTest {
 
     @BeforeMethod
     @Step("Setup test environment")
+    @Description("This step initializes the test environment and sets up the necessary page objects.")
     public void setUp() {
         login = new LoginPageObject();
+        Allure.step("Page objects initialized");
     }
 
     @Test(description = "Test login functionality")
@@ -35,11 +37,12 @@ public class LoginPageTest extends BaseWebAutomationTest {
 
     @Override
     public void navigateTo() {
-        // Uygulanacak kodu buraya ekleyin
+        Allure.step("Navigating to the base URL of the application");
     }
 
     @Override
     public boolean isPresent() {
+        Allure.step("Checking if the element is present");
         return false;
     }
 }
