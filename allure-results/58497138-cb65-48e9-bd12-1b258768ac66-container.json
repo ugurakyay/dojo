@@ -1,0 +1,1 @@
+{"uuid":"58497138-cb65-48e9-bd12-1b258768ac66","name":"Tests.NewStoryCreateTest.setUp","children":["5fb15d36-af92-4300-8131-cb9d164c1237"],"description":"","befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1724369456518,"stop":1724369458831}],"afters":[],"start":1724369456518,"stop":1724369458831}

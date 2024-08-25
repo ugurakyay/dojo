@@ -11,6 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.time.Duration;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class StoryActionsPageObject extends PageObject { // Story Actions
 
@@ -29,44 +31,45 @@ public class StoryActionsPageObject extends PageObject { // Story Actions
         element.click();
         Thread.sleep(1000);
 
-
-
         Actions actions = new Actions(browser);
         actions.sendKeys(Keys.TAB, Keys.TAB, Keys.DOWN).perform();
         Thread.sleep(1000);
 
         browser.findElement(By.xpath("//option[contains(text(), 'preprod')]")).click();
 
+        Thread.sleep(2000);
+        browser.findElement(By.xpath("//button[contains(text(), 'Update')]")).click();
+        browser.findElement(By.xpath("//button[span[text()='Click to add condition']]")).click();
 
 
-        /*WebElement selectElement = browser.findElement(By.id("DB-964db7fa-90f1-4a16-ad4d-3f5031d00342-decisionBox-event-form.event"));
-        Select select = new Select(selectElement);
-        select.selectByVisibleText("preprod_cwmp_inform");
 
-         */
+    }
 
-        Thread.sleep(2000);
-
-        actions.sendKeys("c").perform();
-        browser.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div/div/div/div/main/div[5]/div/div[1]/div/div/div[2]/div[2]/div/div[2]/div[3]/div/div/button")).click();
-        browser.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div/div/div/div/main/div[5]/div/div[1]/div/div/div[2]/div[2]/div/div[2]/div[3]/div[2]/button")).click();
-        Thread.sleep(2000);
-        actions.sendKeys(Keys.DOWN).perform();
-        actions.sendKeys("test").perform();
-        Thread.sleep(2000);
-        actions.sendKeys(Keys.TAB, Keys.TAB, Keys.SPACE).perform();
-        Thread.sleep(2000);
-        actions.sendKeys("I", "I").perform();
-        actions.sendKeys(Keys.ENTER, Keys.TAB).perform();
-        Thread.sleep(2000);
-        actions.sendKeys(Keys.ENTER).perform();
-        Thread.sleep(1000);
-        actions.sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ENTER).perform();
-        Thread.sleep(2000);
-        actions.sendKeys(Keys.TAB).perform();
-        Thread.sleep(1000);
-        actions.sendKeys(Keys.TAB, Keys.TAB, "5", Keys.TAB, Keys.TAB, Keys.ENTER).perform();
+    public void addPlayerVarial() throws InterruptedException {
         Thread.sleep(3000);
+
+        browser.findElement(By.xpath("//label[@for='conditionForm']/following-sibling::input")).sendKeys("Test");
+        browser.findElement(By.xpath("//option[contains(text(), 'Player Variable')]")).click();
+
+        Thread.sleep(2000);
+        // SVG'nin içindeki belirli bir path'i tespit eden XPath
+        browser.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[2]/div/div/div/div/main/div[3]/div[1]/div[2]/div[7]")).click();
+        browser.findElement(By.xpath("//button[contains(text(), 'Add New')]")).click();
+        browser.findElement(By.id("playerVariableForm.name")).sendKeys("Test_Automation");
+        browser.findElement(By.xpath("//select[@id='playerVariableForm.eventName']/option[@value='preprod_cwmp_inform']")).click();
+        browser.findElement(By.xpath("//select[@id='playerVariableForm.parameterPath']/option[@value='preprod_cwmp_inform_IMEI']")).click();
+        browser.findElement(By.xpath("//button[text()='OK']")).click();
+        Thread.sleep(3000);
+        browser.findElement(By.xpath("//select[contains(@id, 'decisionBox-event-form.lhvValue')]//option[text()='Test_Automation']")).click();
+        Thread.sleep(2000);
+        Actions actions = new Actions(browser);
+        actions.sendKeys(Keys.TAB,Keys.ENTER).perform();
+        Thread.sleep(1000);
+        browser.findElement(By.xpath("//a[contains(@class, 'text-black') and contains(text(), 'greater than')]")).click();
+        Thread.sleep(2000);
+        browser.findElement(By.xpath("//input[contains(@id, 'decisionBox-event-form.rhvValue')]")).sendKeys("4");
+        browser.findElement(By.xpath("//button[contains(text(), 'Save')]")).click();
+
     }
 
     public void zoomOut() throws InterruptedException {
@@ -90,15 +93,46 @@ public class StoryActionsPageObject extends PageObject { // Story Actions
     }
 
     public void stateAction() throws InterruptedException {
-        Thread.sleep(2000);
-        browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div[5]/div/div[1]/div/div/div[2]/div[4]/div[1]/button[2]")).click();
-        Thread.sleep(1000);
-        browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div[5]/div/div[1]/div/div/div[2]/div[4]/div[1]/div[3]/div/div/button/div")).click();
-        Thread.sleep(1000);
+       Thread.sleep(2000);
+        browser.findElement(By.xpath("//button[contains(@class, 'flex-col') and .//div[text()='Test']]")).click();
         Actions actions = new Actions(browser);
-        actions.sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ENTER).perform();
+        actions.sendKeys(Keys.ENTER).perform();
+//WaitAction ekleme
+        browser.findElement(By.xpath("//button[.//span[text()='Click to add new action']]")).click();
+        browser.findElement(By.xpath("//a[contains(text(), 'WaitAction')]")).click();
+        browser.findElement(By.xpath("//input[@name='duration' and @data-path='DurationInfo.duration']")).sendKeys("Test");
+        browser.findElement(By.xpath("//select[@name='timeUnit' and @data-path='DurationInfo.timeUnit']/option[@value='SECOND']")).click();
+        browser.findElement(By.xpath("//button[contains(text(), 'Save') and contains(@class, 'bg-black')]")).click();
+
+//ekleme
+        browser.findElement(By.xpath("//div[contains(@class, 'cursor-pointer') and .//span[contains(text(), 'Click to add new action')]]")).click();
+        browser.findElement(By.xpath("//a[contains(text(), 'CallServiceAction')]")).click();
+        browser.findElement(By.xpath("//button[text()='Save' and contains(@class, 'bg-black')]")).click();
+
+        WebElement zoomOutButton = browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div[3]/div[1]/div[2]/div[3]"));
+        for (int i = 0; i < 5; i++) {
+            zoomOutButton.click();
+        }
+//SendMailAction ekleme
+        browser.findElement(By.xpath("//div[contains(@class, 'cursor-pointer') and .//span[contains(text(), 'Click to add new action')]]")).click();
+        browser.findElement(By.xpath("//a[contains(text(), 'SendMailAction')]")).click();
+        browser.findElement(By.xpath("//button[text()='Save' and contains(@class, 'bg-black')]")).click();
+
+//StorePlayerVariableAction ekleme
+        browser.findElement(By.xpath("//div[contains(@class, 'cursor-pointer') and .//span[contains(text(), 'Click to add new action')]]")).click();
+        browser.findElement(By.xpath("//a[contains(text(), 'StorePlayerVariableAction')]")).click();
+        browser.findElement(By.xpath("//button[contains(text(), 'Save') and contains(@class, 'bg-black')]")).click();
+
+    }
+
+    public void deleteStateAction() throws InterruptedException {
+        browser.findElement(By.xpath("//button[text()='Delete']")).click();
         Thread.sleep(1000);
-        browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div[5]/div/div[1]/div/div/div[2]/div[4]/div[1]/div[2]/div/div/div/dl/div/div/dd/div/form/div[2]/button[2]")).click();
+        browser.findElement(By.xpath("//button[text()='Delete']")).click();
+        Thread.sleep(1000);
+        browser.findElement(By.xpath("//button[text()='Delete']")).click();
+        Thread.sleep(1000);
+        browser.findElement(By.xpath("//button[text()='Delete']")).click();
     }
 
     public void deployButton() throws InterruptedException {
