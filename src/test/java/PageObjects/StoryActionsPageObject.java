@@ -45,7 +45,6 @@ public class StoryActionsPageObject extends PageObject { // Story Actions
 
     public void addPlayerVarial() throws InterruptedException {
         Thread.sleep(3000);
-
         browser.findElement(By.xpath("//label[@for='conditionForm']/following-sibling::input")).sendKeys("Test");
         browser.findElement(By.xpath("//option[contains(text(), 'Player Variable')]")).click();
 
@@ -95,14 +94,13 @@ public class StoryActionsPageObject extends PageObject { // Story Actions
         browser.findElement(By.xpath("//button[contains(@class, 'flex-col') and .//div[text()='Test']]")).click();
         Actions actions = new Actions(browser);
         actions.sendKeys(Keys.ENTER).perform();
-//WaitAction ekleme
+
         browser.findElement(By.xpath("//button[.//span[text()='Click to add new action']]")).click();
         browser.findElement(By.xpath("//a[contains(text(), 'WaitAction')]")).click();
         browser.findElement(By.xpath("//input[@name='duration' and @data-path='DurationInfo.duration']")).sendKeys("Test");
         browser.findElement(By.xpath("//select[@name='timeUnit' and @data-path='DurationInfo.timeUnit']/option[@value='SECOND']")).click();
         browser.findElement(By.xpath("//button[contains(text(), 'Save') and contains(@class, 'bg-black')]")).click();
 
-//ekleme
         browser.findElement(By.xpath("//div[contains(@class, 'cursor-pointer') and .//span[contains(text(), 'Click to add new action')]]")).click();
         browser.findElement(By.xpath("//a[contains(text(), 'CallServiceAction')]")).click();
         browser.findElement(By.xpath("//button[text()='Save' and contains(@class, 'bg-black')]")).click();

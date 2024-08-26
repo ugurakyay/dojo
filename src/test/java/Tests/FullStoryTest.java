@@ -45,6 +45,9 @@ public class FullStoryTest extends BaseWebAutomationTest {
         States.addDetailsNormal();
         Allure.step("Adding normal state details");
 
+        Actions.addEvent();
+        Allure.step("Adding Event");
+
         Actions.addPlayerVarial();
         Allure.step("Adding player variable");
 
@@ -53,6 +56,9 @@ public class FullStoryTest extends BaseWebAutomationTest {
 
         Actions.deleteStateAction();
         Allure.step("Deleting state action");
+
+        States.addEndState();
+        Allure.step("Adding End State");
 
         Actions.zoomOut();
         Allure.step("Zooming out");
