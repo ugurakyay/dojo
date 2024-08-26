@@ -41,7 +41,8 @@ public class LibraryPageObject extends PageObject {
         secondButton.click();
         Thread.sleep(3000);
         Actions actions = new Actions(browser);
-        actions.sendKeys(Keys.TAB).sendKeys(Keys.ENTER).perform();
+        actions.sendKeys(Keys.TAB,Keys.TAB).sendKeys(Keys.ENTER).perform();
+        Thread.sleep(2000);
         browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div/div[1]/div/div[3]/div[3]/nav/div/div/div[1]/div/div[1]/a/div[1]/span")).click();
         Thread.sleep(3000);
         browser.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div/div/div/main/div/div[2]/div/div[2]/div/div/div/div[3]/div/div/dl/div/div/dd/div/form/div[2]/button")).click();
@@ -80,21 +81,13 @@ public class LibraryPageObject extends PageObject {
     public void actionTemplate () throws InterruptedException {
         Actions actions = new Actions(browser);
 
-        // "DOJO Templates" metnine sahip span elementini bul ve tıklat
         WebElement dojoTemplatesElement = browser.findElement(By.xpath("//span[text()='DOJO Templates']"));
         dojoTemplatesElement.click();
 
-// "DOJO Templates" metnine sahip elementin içinde bulunan butonu bul ve tıklat
         WebElement dojoButton = browser.findElement(By.xpath("//span[text()='DOJO Templates']/ancestor::a//button[@class='disclosure pr-3']"));
         dojoButton.click();
-
-        // "Action Templates" metnine sahip span elementini bul
         WebElement actionTemplatesElement = browser.findElement(By.xpath("//span[text()='Action Templates']"));
-
-// "Action Templates" elementinin ebeveyni olan 'a' etiketini bul
         WebElement actionTemplatesParent = actionTemplatesElement.findElement(By.xpath("./ancestor::a"));
-
-// Bu 'a' etiketi içindeki buton elementini bul ve tıkla
         WebElement buttonInsideActionTemplates = actionTemplatesParent.findElement(By.xpath(".//button[@class='disclosure pr-3']"));
         buttonInsideActionTemplates.click();
 

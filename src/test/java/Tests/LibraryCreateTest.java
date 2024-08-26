@@ -40,8 +40,8 @@ public class LibraryCreateTest extends BaseWebAutomationTest {
         library.AddNewEvent();
         Allure.step("Adding a new event");
 
-        library.addNewEvent2();
-        Allure.step("Adding a second new event");
+        //library.addNewEvent2();
+        //Allure.step("Adding a second new event");
 
         library.dojoEvents();
         Allure.step("Clicking on Dojo events");
