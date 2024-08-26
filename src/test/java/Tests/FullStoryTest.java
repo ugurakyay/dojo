@@ -51,6 +51,9 @@ public class FullStoryTest extends BaseWebAutomationTest {
         Actions.addPlayerVarial();
         Allure.step("Adding player variable");
 
+        Actions.requirement();
+        Allure.step("Adding Requirement");
+
         Actions.stateAction();
         Allure.step("Performing state action");
 

@@ -43,6 +43,7 @@ public class NewStoryCreate2Test extends BaseWebAutomationTest {
         Story.NewStory();
         Allure.step("Creating a new story");
 
+
         States.addEndState();
         Allure.step("Adding an End State to the story");
 

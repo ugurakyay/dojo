@@ -144,19 +144,18 @@ public class StoryActionsPageObject extends PageObject { // Story Actions
     }
 
     public void requirement() throws InterruptedException {
-        browser.findElement(By.xpath("//div[@class='tooltip-content']/span\n")).click();
-        Thread.sleep(5000);
-        // Dropdown menüsünü açın
-        WebElement dropdown = browser.findElement(By.xpath("//select"));
-        dropdown.click();
+        // İlk olarak gerekli menüyü tıklayın
+        browser.findElement(By.xpath("//div[@class='tooltip-content']/span")).click();
+        Thread.sleep(2000);
 
-// 'preprod_cwmp_inform' metnini içeren seçeneği seçin
-        WebElement option = browser.findElement(By.xpath("//option[text()='preprod_cwmp_inform']"));
-        option.click();
+        // Menü açıldıktan sonra "preprod_cwmp_inform" seçeneğini seçin
+        Actions actions = new Actions(browser);
+        actions.sendKeys(Keys.DOWN).perform();
+        browser.findElement(By.xpath("//option[@value='preprod_cwmp_inform']")).click();
 
-
-
-        browser.findElement(By.xpath("//input[@id='person-preprod_cwmp_inform_Temperature']\n")).click();
-        browser.findElement(By.xpath("//button[text()='Save for current event']\n")).click();
+        // İlgili input elementini ve butonu tıklayın
+        browser.findElement(By.xpath("//input[@id='person-preprod_cwmp_inform_Temperature']")).click();
+        browser.findElement(By.xpath("//button[text()='Save for current event']")).click();
     }
+
 }
