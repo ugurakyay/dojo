@@ -13,6 +13,7 @@ public class NewStoryCreate4Test extends BaseWebAutomationTest {
     private LoginPageObject login;
     private StoryPageObject Story;
     private StoryStatesPageObject States;
+    private StoryActionsPageObject Actions;
 
     @BeforeMethod
     @Step("Setup test environment")
@@ -21,6 +22,7 @@ public class NewStoryCreate4Test extends BaseWebAutomationTest {
         login = new LoginPageObject();
         Story = new StoryPageObject();
         States = new StoryStatesPageObject();
+        Actions = new StoryActionsPageObject();
         Allure.step("Page objects initialized");
     }
 
@@ -42,6 +44,9 @@ public class NewStoryCreate4Test extends BaseWebAutomationTest {
 
         States.addDecisionBox();
         Allure.step("Adding a Decision Box to the story");
+
+        Actions.deleteStory();
+        Allure.step("Delete Story");
 
         login.logOut();
         Allure.step("Logging out from the application");

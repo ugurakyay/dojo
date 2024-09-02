@@ -69,6 +69,12 @@ public class FullStoryTest extends BaseWebAutomationTest {
         Actions.deployButton();
         Allure.step("Deploying the story");
 
+        Actions.deployButton();
+        Allure.step("UnDeploy Story");
+
+        Actions.deleteStory();
+        Allure.step("Delete Story");
+
         login.logOut();
         Allure.step("Logging out from the application");
     }

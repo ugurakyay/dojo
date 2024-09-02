@@ -1,15 +1,14 @@
 package PageObjects;
 
 import framework.pageobject.PageObject;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import java.time.Duration;
+import java.util.List;
 
 public class StoryActionsPageObject extends PageObject { // Story Actions
 
@@ -157,5 +156,33 @@ public class StoryActionsPageObject extends PageObject { // Story Actions
         browser.findElement(By.xpath("//input[@id='person-preprod_cwmp_inform_Temperature']")).click();
         browser.findElement(By.xpath("//button[text()='Save for current event']")).click();
     }
+
+    public void deleteStory() throws InterruptedException {
+        Thread.sleep(2000);
+
+        // Elemanı tıklama
+        browser.findElement(By.xpath("//*[@id='root']/div[1]/div[1]/div/div/div/a")).click();
+
+        // İlk tıklamadan sonra 4 saniye bekle
+        Thread.sleep(4000);
+
+        WebElement element = browser.findElement(By.xpath("//span[contains(text(), 'Create new story')]"));
+
+        // JavaScript kullanarak sayfayı elementin konumuna kaydır
+        ((JavascriptExecutor) browser).executeScript("arguments[0].scrollIntoView(true);", element);
+
+        // Alternatif olarak, Actions sınıfını kullanarak kaydırma
+        Actions actions = new Actions(browser);
+        actions.moveToElement(element).perform();
+
+        Thread.sleep(1000);
+        browser.findElement(By.xpath("//p[starts-with(text(), 'Test_Automation_By_je_')]/ancestor::div[contains(@class, 'relative')]/preceding-sibling::div//button[contains(@class, 'inline-flex')]")).click();
+        Thread.sleep(2000);
+        browser.findElement(By.xpath("//a[contains(text(), 'Remove story')]")).click();
+        Thread.sleep(1000);
+        browser.findElement(By.xpath("//button[text()='Remove']")).click();
+    }
+
+
 
 }

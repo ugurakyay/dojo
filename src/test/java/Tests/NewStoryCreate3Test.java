@@ -1,6 +1,7 @@
 package Tests;
 
 import PageObjects.LoginPageObject;
+import PageObjects.StoryActionsPageObject;
 import PageObjects.StoryPageObject;
 import PageObjects.StoryStatesPageObject;
 import framework.BaseWebAutomationTest;
@@ -12,6 +13,7 @@ public class NewStoryCreate3Test extends BaseWebAutomationTest {
     private LoginPageObject login;
     private StoryPageObject Story;
     private StoryStatesPageObject States;
+    private StoryActionsPageObject Actions;
 
     @BeforeMethod
     @Step("Setup test environment")
@@ -20,6 +22,7 @@ public class NewStoryCreate3Test extends BaseWebAutomationTest {
         login = new LoginPageObject();
         Story = new StoryPageObject();
         States = new StoryStatesPageObject();
+        Actions= new StoryActionsPageObject();
         Allure.step("Page objects initialized");
     }
 
@@ -41,6 +44,9 @@ public class NewStoryCreate3Test extends BaseWebAutomationTest {
 
         States.oneEventState();
         Allure.step("Adding a One Event State to the story");
+
+        Actions.deleteStory();
+        Allure.step("Delete Story");
 
         login.logOut();
         Allure.step("Logging out from the application");

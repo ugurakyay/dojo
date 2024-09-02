@@ -47,6 +47,9 @@ public class NewStoryCreate2Test extends BaseWebAutomationTest {
         States.addEndState();
         Allure.step("Adding an End State to the story");
 
+        Actions.deleteStory();
+        Allure.step("Delete Story");
+
         login.logOut();
         Allure.step("Logging out from the application");
     }
