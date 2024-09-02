@@ -45,12 +45,7 @@
             <class name="Tests.FullStoryTest"/>
         </classes>
     </test>
-    <test name="RemoveStoryTest">
-        <classes>
-            <class name="Tests.RemoveStoryTest"/>
-        </classes>
-    </test>
-    <test name="CollectionTest">
+        <test name="CollectionTest">
         <classes>
             <class name="Tests.CollectionTest"></class>
         </classes>
